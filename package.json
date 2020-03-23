@@ -1,0 +1,50 @@
+{
+  "name": "sdk",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "author": "guoyh <gyh9457@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --fix src/**/*.ts",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run lint && npm run test",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd",
+    "build:umd": "rollup -c ./rollup/config.umd.ts",
+    "build:cjs": "tsc -m CommonJS --outDir lib",
+    "build:esm": "tsc -m ES6 --outDir es",
+    "test": "jest --no-cache --detectOpenHandles"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "@rollup/plugin-typescript": "^4.0.0",
+    "@types/jest": "^25.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "@typescript-eslint/parser": "^2.24.0",
+    "add": "^2.0.6",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jest": "^25.1.0",
+    "jest-canvas-mock": "^2.2.0",
+    "jest-environment-jsdom": "^25.1.0",
+    "jest-environment-jsdom-global": "^1.2.1",
+    "jest-environment-node": "^25.1.0",
+    "jest-localstorage-mock": "^2.4.0",
+    "prettier": "^2.0.1",
+    "rollup": "^2.1.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "ts-jest": "^25.2.1",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "strict": true,
+    "noImplicitAny": false,
+    "declaration": true,
+    "noImplicitThis": false,
+    "pretty": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "lib": ["dom", "es5", "es6", "es7", "scripthost"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
